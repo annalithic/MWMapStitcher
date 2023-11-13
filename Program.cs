@@ -19,7 +19,10 @@ namespace MWMapStitcher {
         }
 
         static void Main(string[] args) {
-            StitchExteriorMap(@"F:\Anna\Documents\My Games\OpenMW\maps", 512);
+            if(args.Length != 2) StitchExteriorMap(@"F:\Extracted\Morrowind\MAPSTRNEWSMALL\maps", 512);
+            else {
+                StitchExteriorMap(args[0], int.Parse(args[1]));
+            }
         }
 
         static Coord GetCoords(string path) {
